@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // show search
-  var openSearch = document.querySelector(".top-header__right-item--search");
-  var search = document.querySelector(".search");
-
   // back top
   var backTop = document.querySelector("#back-top");
 
@@ -19,18 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // su ly cac su kien
     handleEvent: function () {
       const _this = this;
-      // show search
-      if (openSearch) {
-        if (search) {
-          openSearch.onclick = function () {
-            if (search.classList.contains("show")) {
-              search.classList.remove("show");
-            } else {
-              search.classList.add("show");
-            }
-          };
-        }
-      }
 
       // when click back top
       if (backTop) {
@@ -74,16 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
       // hide cac element khi click ra ngoai
-      document.addEventListener("click", function (e) {
-        if (openSearch && search) {
-          if (
-            !search.contains(e.target) &&
-            !e.target.matches(".top-header__right-item--search")
-          ) {
-            search.classList.remove("show");
-          }
-        }
-      });
+      document.addEventListener("click", function (e) {});
     },
     // sticky sidebar main
     stickySlidebarMain: function () {
